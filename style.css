@@ -11,52 +11,57 @@ body {
     position: relative;
 }
 
-.header {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #262626;
-    padding: 5px 0;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    font-family: 'Press Start 2P', cursive;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em;
-}
-
 body::before {
     content: "";
     position: absolute;
-    top: 60px; /* Start below the header */
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: url('img/hiro.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.5; /* Make the background more visible */
     z-index: 0;
+}
+
+.title-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc légèrement transparent */
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: absolute; /* Positionnement absolu */
+    top: 20px; /* Distance du haut */
+    left: 20px; /* Distance de la gauche */
+    z-index: 10; /* Au-dessus de l'image de fond */
+    font-family: 'New Amsterdam', sans-serif; /* Utiliser la police New Amsterdam */
+}
+
+.title-container h1 {
+    margin: 0;
+    font-size: 4.5em; /* Taille agrandie par rapport à la taille originale */
+    color: #262626;
 }
 
 .game-container {
     position: absolute;
     bottom: 20px; /* Position near the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
+    width: 250px; /* Set width for rectangular shape */
+    height: 150px; /* Set height for rectangular shape */
     z-index: 10;
-    opacity: 0.89; /* Adjusted to match 11% transparency */
+    opacity: 0.8; /* 80% opacity */
+    font-family: 'Pixel Font-7', sans-serif; /* Use Pixel Font-7 */
 }
 
 .challenge-display {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    padding: 20px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.11); /* 11% transparency */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -67,11 +72,11 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #challenge-counter {
-    font-size: 1.2em;
+    font-size: 0.9em;
     color: white;
 }
 
@@ -79,8 +84,8 @@ body::before {
     background-color: #ff5a5f;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 5px 10px;
+    font-size: 0.9em;
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -95,8 +100,8 @@ body::before {
 #replay-btn.large {
     background-color: white;
     color: #ff5a5f;
-    font-size: 1.5em;
-    padding: 20px 40px;
+    font-size: 1.2em;
+    padding: 15px 30px;
 }
 
 .progress-bar {
@@ -105,7 +110,7 @@ body::before {
     border-radius: 5px;
     overflow: hidden;
     height: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .progress {
@@ -118,21 +123,22 @@ body::before {
 @media (max-width: 768px) {
     .game-container {
         width: 95%;
+        height: auto;
         padding: 15px;
     }
 
     .challenge-display {
-        font-size: 1.2em;
-        padding: 15px;
+        font-size: 0.9em;
+        padding: 10px;
     }
 
     .btn {
         padding: 8px 16px;
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     #replay-btn.large {
-        font-size: 1.2em;
-        padding: 15px 30px;
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
