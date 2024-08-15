@@ -119,12 +119,6 @@ function displayRandomChallenge() {
         document.getElementById('challenge-counter').textContent = `${challengeCount}/20`;
         document.getElementById('progress').style.width = `${(challengeCount / 20) * 100}%`;
     }
-    if (challengeCount === 20) {
-        document.getElementById('new-challenge-btn').style.display = 'none';
-        const replayBtn = document.getElementById('replay-btn');
-        replayBtn.style.display = 'inline-block';
-        replayBtn.classList.add('large');
-    }
 }
 
 document.getElementById('new-challenge-btn').addEventListener('click', displayRandomChallenge);
