@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Défis Soirée</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jeu de Défis</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Jeu de Défis Amusants</h1>
+    </div>
     <div class="container">
-        <h1>Défis Soirée</h1>
-        <div class="challenges">
-            <!-- Buttons will be injected here by JavaScript -->
+        <div id="challenge-display" class="challenge-display">
+            Cliquez sur le bouton pour un défi !
         </div>
-        <button class="generate-btn">Générer un défi</button>
+        <button id="new-challenge-btn" class="btn">Nouveau Défi</button>
     </div>
     <script src="script.js"></script>
 </body>
