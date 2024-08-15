@@ -21,7 +21,32 @@ const challenges = [
     "Danser comme si personne ne regardait"
 ];
 
-document.getElementById('new-challenge-btn').addEventListener('click', () => {
-    const randomIndex = Math.floor(Math.random() * challenges.length);
-    document.getElementById('challenge-display').textContent = challenges[randomIndex];
+let challengeCount = 0;
+
+function displayRandomChallenge() {
+    if (challengeCount < 20) {
+        const randomIndex = Math.floor(Math.random() * challenges.length);
+        document.getElementById('challenge-display').textContent = challenges[randomIndex];
+        challengeCount++;
+        document.getElementById('challenge-counter').textContent = `${challengeCount}/20`;
+        document.getElementById('progress').style.width = `${(challengeCount / 20) * 100}%`;
+    }
+    if (challengeCount === 20) {
+        document.getElementById('new-challenge-btn').style.display = 'none';
+        const replayBtn = document.getElementById('replay-btn');
+        replayBtn.style.display = 'inline-block';
+        replayBtn.classList.add('large');
+    }
+}
+
+document.getElementById('new-challenge-btn').addEventListener('click', displayRandomChallenge);
+
+document.getElementById('replay-btn').addEventListener('click', () => {
+    challengeCount = 0;
+    document.getElementById('new-challenge-btn').style.display = 'inline-block';
+    document.getElementById('replay-btn').style.display = 'none';
+    document.getElementById('replay-btn').classList.remove('large');
+    document.getElementById('challenge-display').textContent = "Cliquez sur le bouton pour un défi !";
+    document.getElementById('challenge-counter').textContent = "0/20";
+    document.getElementById('progress').style.width = "0%";
 });

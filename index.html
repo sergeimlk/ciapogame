@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu de Défis</title>
+    <title>HIRO GAME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header">
-        <h1>Jeu de Défis Amusants</h1>
+        <h1>HIRO GAME</h1>
     </div>
-    <div class="container">
+    <div class="game-container">
         <div id="challenge-display" class="challenge-display">
             Cliquez sur le bouton pour un défi !
         </div>
-        <button id="new-challenge-btn" class="btn">Nouveau Défi</button>
+        <div class="controls">
+            <button id="new-challenge-btn" class="btn">Nouveau Défi</button>
+            <span id="challenge-counter">0/20</span>
+        </div>
+        <button id="replay-btn" class="btn" style="display: none;">Rejouer</button>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
